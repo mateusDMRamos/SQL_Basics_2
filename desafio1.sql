@@ -32,6 +32,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
   CREATE TABLE SpotifyClone.musicas(
     musica_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     musica_nome VARCHAR(50) NOT NULL,
+    musica_duracao DOUBLE NOT NULL,
     album_id INT NOT NULL,
     artista_id INT NOT NULL,
     FOREIGN KEY (album_id) REFERENCES albuns (album_id)
@@ -81,16 +82,18 @@ DROP DATABASE IF EXISTS SpotifyClone;
     ('universitário', 5.99),
     ('pessoal', 6.99);
 
-  INSERT INTO SpotifyClone.musicas (musica_nome, artista_id, album_id)
+  INSERT INTO SpotifyClone.musicas (musica_nome, musica_duracao, artista_id, album_id)
   VALUES
-    ('Feeling Good', 1, 1),
-    ('The Bard’s Song', 2, 2),
-    ('Samba em Paris', 3, 3),
-    ('O Medo de Amar é o Medo de Ser Livre', 4, 4),
-    ('Como Nossos Pais', 4, 5),('Under Pressure', 5, 6),
-    ('Don’t Stop Me Now', 5, 7),('ALIEN SUPERSTAR', 6, 8),
-    ('VIRGO’S GROOVE', 6, 8),
-    ('BREAK MY SOUL', 6, 8);
+    ('Feeling Good', 100, 1, 1),
+    ('The Bard’s Song', 244, 2, 2),
+    ('Samba em Paris', 267, 3, 3),
+    ('O Medo de Amar é o Medo de Ser Livre', 207, 4, 4),
+    ('Como Nossos Pais', 105, 4, 5),
+    ('Under Pressure', 152, 5, 6),
+    ('Don’t Stop Me Now', 203, 5, 7),
+    ('ALIEN SUPERSTAR', 116, 6, 8),
+    ('VIRGO’S GROOVE', 369, 6, 8),
+    ('BREAK MY SOUL', 279, 6, 8);
 
   INSERT INTO SpotifyClone.usuarios (usuario_nome, idade, plano_id, data_assinatura)
   VALUES
