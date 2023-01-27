@@ -32,7 +32,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
   CREATE TABLE SpotifyClone.musicas(
     musica_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     musica_nome VARCHAR(50) NOT NULL,
-    musica_duracao DOUBLE NOT NULL,
+    musica_duracao INT NOT NULL,
     album_id INT NOT NULL,
     artista_id INT NOT NULL,
     FOREIGN KEY (album_id) REFERENCES albuns (album_id)
